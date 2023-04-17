@@ -1,0 +1,46 @@
+<div class="flex flex-col px-4 py-5">
+    <a href="#NewEmployee" class="bg-[#2375e2] text-white py-2.5 px-3.5 self-end rounded"> NEW EMPLOYEE</a>
+    <div class="min-w-full py-2.5">
+        <div class="flex min-w-full">
+            <div class="flex-1 p-2 max-w-[11.3em]">
+              <span>ID</span>
+            </div>
+            <div class="flex flex-1 p-2 justify-start max-w-[11.2em]">
+              <span>FIRST NAME</span>
+            </div>
+            <div class="flex flex-1 p-2 justify-start max-w-[11.6em]">
+              <span>LAST NAME</span>
+            </div>
+            <div class="flex flex-1   p-2 justify-center">
+                <span>STATUS</span>
+            </div>
+            <div class="flex flex-1 p-2 justify-end">
+              <span>ACTIONS</span>
+            </div>
+          </div>
+          {{#each response}}
+          <div class="flex min-w-full max-h-[3rem] md:max-h-[2.5rem]">
+            <div class="flex flex-1 p-2 border-b-2 flex-nowrap overflow-hidden">
+              <span class="text-ellipsis overflow-hidden">{{this.EmployeeNo}}</span>
+            </div>
+            <div class="flex-1 p-2 border-b-2">
+              <span>{{this.FirstName}}</span>
+            </div>
+            <div class="flex-1 p-2 border-b-2">
+              <span>{{this.LastName}}</span>
+            </div>
+            <div class="flex flex-col flex-1 p-2 border-b-2 justify-center items-center">
+                <span class="rounded-full text-white p-2 max-h-7 block text-center text-xs md:w-28 max-sm:w-19{{#if Status}} bg-[#48b97d] {{else}} bg-[#d14d4d] {{/if}}" >
+                  {{#if Status}} ACTIVE {{else}} INACTIVE {{/if}}
+                </span>
+            </div>
+            <div class="flex flex-1 p-2 border-b-2 justify-end">
+                <div class="flex justify-between md:w-2/5 max-sm:w-10">
+                  <a href="#EditEmployee/{{this.PersonID}}"> <span class="fa-solid fa-pen-to-square btn-action text-[#87919e]" ></span></a> 
+                   <a href="#RemoveEmployee/{{this.PersonID}}"><span class="fa-solid fa-trash-can btn-action text-[#87919e]" ></span></a> 
+                </div>
+            </div>
+          </div>
+          {{/each}}
+    </div>
+</div>

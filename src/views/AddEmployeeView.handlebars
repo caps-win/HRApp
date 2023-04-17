@@ -1,0 +1,34 @@
+<div class="flex flex-col px-4 py-5">
+    <form id="form" action="./#Edit" >
+        <div>
+            <input class="hidden" type="text" value="{{employee.PersonID}} " id="personID" name="personID">
+            <div class="flex min-w-full p-3 flex-wrap">
+                <div class="flex flex-col min-w-[50%] pb-3 md:pr-3 max-sm:min-w-full">
+                    <label for="name">First Name</label>
+                    <input value="{{employee.FirstName}}" class="border border-solid p-2 rounded focus:outline-none" type="text" name="firstName" id="firstName" required>
+                </div>
+                <div class="flex flex-col min-w-[50%] max-sm:min-w-full">
+                    <label for="lastName">LastName</label>
+                    <input value="{{employee.LastName}}" class="border border-solid p-2 rounded focus:outline-none" type="text" name="lastName" id="lastName" required>
+                </div>
+            </div>
+            <div class="flex flex-col min-w-[50%] p-3">
+            <label for="id">ID</label>
+               <input value="{{employee.EmployeeNo}}" class="border border-solid p-2 rounded focus:outline-none" type="string" name="id" id="id" required>
+            </div>
+            <div class="flex flex-col min-w-[50%] p-3">
+                <label for="ssn">SSN</label>
+                <input value="{{employee.SSN}}" class="border border-solid p-2 rounded focus:outline-none" type="text" name="ssn" id="ssn" maxlength="11"  required>
+            </div>
+             <div class="flex min-w-[50%] p-3">
+                <label class="p-1 " for="active">ACTIVE</label>
+                <input  class="text-indigo-500" type="checkbox" name="active" id="active" {{#if employee.Status}}checked{{/if}}>
+            </div>
+
+            <div class="flex justify-end">
+                <button type="submit" class="bg-[#2375e2] text-white py-2.5 px-6 self-end rounded">SAVE</button>
+            </div>
+
+        </div>
+    </form>
+</div>
