@@ -1,21 +1,8 @@
 export interface Employee {
-   // TenantID : string,
     PersonID : string,
-    //CreatedBy : string,
-    //CreatedDate : string,
     FirstName: string,
-   // IsDeleted: false,
     LastName: string,
-    // LastUpdatedBy: string,
-    // LastUpdatedDate: string,
-    // MiddleInitial: string | null,
     SSN: string,
-    // Timestamp: string,
-    // UserDefinedFields: string | null,
     EmployeeNo: string | null,
-    // EmploymentEndDate: string | null,
-    // EmploymentStartDate: string | null,
     Status: number,
-    //StatusDV: string,
-    //EmployeeTimestamp: string | null
 }
