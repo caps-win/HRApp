@@ -19,15 +19,15 @@
             </div>
           </div>
           {{#each response}}
-          <div class="flex min-w-full max-h-[3rem] md:max-h-[2.5rem]">
+          <div class="flex min-w-full max-sm:max-h-[4.5rem] md:max-h-[2.5rem]">
             <div class="flex flex-1 p-2 border-b-2 flex-nowrap overflow-hidden">
               <span class="text-ellipsis overflow-hidden">{{this.EmployeeNo}}</span>
             </div>
-            <div class="flex-1 p-2 border-b-2">
-              <span>{{this.FirstName}}</span>
+            <div class="flex flex-1 p-2 border-b-2 flex-nowrap overflow-hidden ">
+              <span class="text-ellipsis overflow-hidden">{{this.FirstName}}</span>
             </div>
-            <div class="flex-1 p-2 border-b-2">
-              <span>{{this.LastName}}</span>
+            <div class="flex flex-1 p-2 border-b-2 flex-nowrap overflow-hidden">
+              <span class="text-ellipsis overflow-hidden">{{this.LastName}}</span>
             </div>
             <div class="flex flex-col flex-1 p-2 border-b-2 justify-center items-center">
                 <span class="rounded-full text-white p-2 max-h-7 block text-center text-xs md:w-28 max-sm:w-19{{#if Status}} bg-[#48b97d] {{else}} bg-[#d14d4d] {{/if}}" >
