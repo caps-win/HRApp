@@ -65,7 +65,7 @@ export const AddEmployee = async () => {
             LastName: form.get('lastName').toString(),
             EmployeeNo: form.get('id').toString(),
             SSN: form.get('ssn').toString(),
-            Status: form.get('active').toString() == 'on'? 1 : 0,
+            Status: form.get('active')?.toString() == 'on'? 1 : 0,
             EmploymentStartDate: new Date().toISOString(),
             EmploymentEndDate: null
         }
