@@ -1,6 +1,5 @@
 import { getEmployees, removeEmployee, UpdateEmployee, AddEmployee } from './viewModels/Employee.viewModel';
 export const router = async (route: string) => {
-    console.log(route)
     const path = route.split('/')[0];
     const parameter = route.split('/')[1]
     const element = document.getElementById('root')!;

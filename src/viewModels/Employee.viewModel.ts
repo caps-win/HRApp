@@ -8,12 +8,7 @@ const editTemplate = require('../views/EditEmployeeView.handlebars');
 export const getEmployees = async () => {
     const model = new EmployeeModel();
     const response = await model.getEmployees();
-    console.log(typeof(template))
-    return template({response}, {
-        Helpers: [
-            {'test': () => console.log('hey')}
-        ]
-    });
+    return template({response});
 }
 
 export const UpdateEmployee = async (id: string, breadcrumb: HTMLElement) => {
@@ -25,10 +20,7 @@ export const UpdateEmployee = async (id: string, breadcrumb: HTMLElement) => {
 
     element.addEventListener('submit', async (e) => {
         e.preventDefault();
-        console.log(document.querySelector("#form") as HTMLFormElement);
         const form = new FormData(document.querySelector("#form"))
-        const personId = form.get('personID')
-        console.log(personId == '');
 
         const employee : Employee = {
             PersonID: form.get('personID').toString(),
@@ -53,10 +45,8 @@ export const AddEmployee = async () => {
 
     element.addEventListener('submit', async (e) => {
         e.preventDefault();
-        console.log(document.querySelector("#form") as HTMLFormElement);
         const form = new FormData(document.querySelector("#form"))
         const personId = form.get('personID')
-        console.log(personId == '');
 
         const uuid = v4();
         const employee : EmployeeCreation = {

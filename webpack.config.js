@@ -49,9 +49,6 @@ module.exports = {
     new HandlebarsPlugin({
       entry: './src/index.handlebars',
       output: './index.html',
-      helpers: {
-        test: ()=> console.log('23'),
-      },
     }),
     new Dotenv({
       path: path.resolve(__dirname, '.env')

@@ -28,22 +28,20 @@ export class EmployeeModel {
 
     async editEmployee(employee : Employee) {
         const header = new Headers(this.header);
-        const respose = await fetch(`${this.URL_BASE}`, {
+        const response = await fetch(`${this.URL_BASE}`, {
             headers: header,
             method: 'PUT',
             body: JSON.stringify(employee)
         })
-        console.log('editing', respose)
     }
 
     async addEmployee(employee : EmployeeCreation) {
         const header = new Headers(this.header);
-        const respose = await fetch(`${this.URL_BASE}`, {
+        const response = await fetch(`${this.URL_BASE}`, {
             headers: header,
             method: 'POST',
             body: JSON.stringify(employee)
         });
-        console.log('adding', respose)
     }
 
     async RemoveEmployee(id : string) {
