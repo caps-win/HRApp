@@ -68,6 +68,9 @@ export const AddEmployee = async () => {
 
 export const removeEmployee = async (id: string) => {
     const model = new EmployeeModel();
-    await model.RemoveEmployee(id);
+    const employee = await model.getEmployeeById(id);
+    if (employee) {
+        await model.RemoveEmployee(id);
+    }
     return await getEmployees();
 }
